@@ -1,0 +1,87 @@
+html, body {
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+body {
+
+	background-color: #f0f0f0;
+	min-height: 700px;
+
+    margin-right: 5px;
+    margin-left: 5px;
+    padding: 5px;
+    font-family: sans-serif;
+      width: 100%; 
+      height: 100%; 
+      left: 0px; 
+      top: 0px; 
+      z-index: -1; 
+
+}
+
+ 
+#wrapper {
+	background-color: #fff;
+	width: 800px;
+	height: 127px;
+	padding: 10px;
+	margin: -75px 0 0 -410px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+}
+.caroufredsel_wrapper {
+	border-radius: 90px;
+}
+#carousel img {
+	width: 201px;
+	height: 127px;
+	margin: 0 5px;
+	float: left;
+}
+#prev, #next {
+	/*  */
+	text-indent: -999px;
+	display: block;
+	overflow: hidden;
+	width: 15px;
+	height: 21px;
+	position: absolute;
+	top: 65px;
+}
+#prev {
+	background-position: 0 0;
+	left: 30px;
+}
+#prev:hover {
+	left: 29px;
+}			
+#next {
+	background-position: -18px 0;
+	right: 30px;
+}
+#next:hover {
+	right: 29px;
+}				
+#pager {
+	text-align: center;
+	margin: 0 auto;
+	padding-top: 20px;
+}
+#pager a {
+	
+	text-decoration: none;
+	text-indent: -999px;
+	display: inline-block;
+	overflow: hidden;
+	width: 8px;
+	height: 8px;
+	margin: 0 5px 0 0;
+}
+#pager a.selected {
+
+	text-decoration: underline;				
+}
+
+h1{text-align: center;}

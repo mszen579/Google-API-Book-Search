@@ -9,6 +9,7 @@
     "moment": "^2.22.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
+    "react-load-script": "0.0.6",
     "react-moment": "^0.7.0",
     "react-number-format": "^3.3.4",
     "react-responsive-carousel": "^3.1.39",

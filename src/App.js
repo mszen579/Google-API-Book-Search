@@ -12,7 +12,9 @@ import "./components/style/css/animate.css";
 import "./components/style/css/jquery.tosrus.all.css";
 import "./components/style/css/themes/default-theme.css";
 import "./components/style/style.css";
-// import Books from "./Books";
+import Books from "./Books";
+import SingleBook from "./SingleBook";
+import List from "./List";
 
 class App extends Component {
   constructor(props) {
@@ -46,7 +48,7 @@ class App extends Component {
           <BrowserRouter>
             <Switch>
               <Route exact path="/" component={Home} />
-              {/* <Route path="/allBooks" component={Books} /> */}
+              <Route path="/allBooks/:keyword" component={Books} />
               <Route
                 render={function() {
                   return (

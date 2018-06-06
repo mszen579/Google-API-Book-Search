@@ -5,7 +5,7 @@ import Moment from "react-moment";
 import { Carousel } from "react-responsive-carousel";
 import styles from "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Link } from "react-router-dom";
-
+import Books from './Books';
 import NumberFormat from 'react-number-format';
 
 
@@ -53,7 +53,7 @@ class Home extends Component {
     return (
       <div>
       
-      {/* <Books lists={this.state.result}/> */}
+     
         <form onSubmit={this.submitHandler} style={{textAlign: "center",
                       marginLeft: "auto",
                       marginRight: "auto",}} className="header">
@@ -84,7 +84,8 @@ class Home extends Component {
                       width: "50%"
                     }}
                   >
-                    <img src={results.volumeInfo.imageLinks.thumbnail} />
+                
+                    <img src={results.volumeInfo.imageLinks.thumbnail && results.volumeInfo.imageLinks.thumbnail || "https://www.asme.org/getmedia/c2c8ea5a-b690-4ba7-92bb-34bd1432862b/book_guide_hero_books.aspx"} />
                     <h1
                       className="legend titlehome"
                       style={{ fontSize: "30px" }}
@@ -191,10 +192,9 @@ class Home extends Component {
                                         ...more
                                       </a>
                                     </p>
-
                                                                             <br/>
                                     <b>Publisher: {results.volumeInfo.publisher}</b>
-                                  
+
                                   </div>
                                 </div>
                               </li>
@@ -206,103 +206,15 @@ class Home extends Component {
                 </div>
               </div>
             </div>
-          </div><hr />
-         
-        </section>
-        
-
-
-
-<div>
-<section id="imgBanner">
-  <h2>All Books</h2>
-</section>
-{this.state.result && this.state.result.map(function(results) {
-  
-      return(
-<section style={{marginLeft: "22%",
-        marginRight: "auto",
-        width: "80%"}} 
-        id="courseArchive">
-  <div className="container">
-    <div className="row">
-      <div className="col-lg-8 col-md-8 col-sm-8">
-        <div className="courseArchive_content">
-          <div className="row">
-            <div className="col-lg-12 col-12 col-sm-12">
-              <div className="single_blog_archive wow fadeInUp">
-                <div className="blogimg_container">
-                  <a href="#" className="blog_img">
-                            <img alt="img" src={ results.volumeInfo.imageLinks.thumbnail}  />
-                  </a>
-                </div>
-                <h2 className="blog_title">
-                  <a href="events-single.html">
-                    {" "}
-                            {results.volumeInfo.title}
-                  </a>
-                </h2>
-                <div className="blog_commentbox">
-                  <p>
-                            <i className="fa fa-clock-o" /><Moment className="text-muted" format="DD MMM YYYY">
-                              {results.volumeInfo.publishedDate}
-                            </Moment>
-                  </p>
-                  <p>
-                            <i className="fa fa-map-marker" /> {results.volumeInfo.publisher}
-                  </p>
-                </div>
-                <p className="blog_summary">
-                                      {results.volumeInfo.description}{" "}
-                                      <a
-                                        href={results.volumeInfo.infoLink}
-                                        className="blog_summary"
-                                      >
-                                        ...more
-                                      </a>
-                                    </p>
-                <p className="blog_summary">
-                Page count: {results.volumeInfo.pageCount}
-                </p>
-                <p className="blog_summary">
-                categories: {results.volumeInfo.categories}
-                </p>
-                <br/>
-                <p className="blog_summary">
-                Average rating: {results.volumeInfo.averageRating}
-                </p>
-                <br/>
-                <p className="blog_summary">
-                Print type: {results.volumeInfo.printType}
-                </p>
-               
-                
-                
-                <p className="blog_summary">Authors: {results.volumeInfo.authors}</p>
-              
-                 
-                <p className="blog_summary" style={{color: "red"}}>Sale availability: {results.saleInfo.saleability}</p>
-                 <br/>
-                 
-              </div>
-            </div>
+            <Link className="see_all" style={{ fontSize: "22px" }} to={"/Allbooks/"+this.state.keywords}>
+                        See all
+            </Link>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-);
-      }
-   )}
-
-</div>
+        </section>
 
 
-
-
-
-
+        {/* <div style={{display: "none"}}> <Books keywords={this.state.keywords}/> </div> */}
+ 
       </div>
     );
   }

@@ -6,7 +6,7 @@ import { Carousel } from "react-responsive-carousel";
 import styles from "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Link } from "react-router-dom";
 import Books from './Books';
-import NumberFormat from 'react-number-format';
+// import NumberFormat from 'react-number-format';
 
 
 class Home extends Component {
@@ -85,7 +85,7 @@ class Home extends Component {
                     }}
                   >
                 
-                    <img src={results.volumeInfo.imageLinks.thumbnail && results.volumeInfo.imageLinks.thumbnail || "https://www.asme.org/getmedia/c2c8ea5a-b690-4ba7-92bb-34bd1432862b/book_guide_hero_books.aspx"} />
+                    <img src={results.volumeInfo.imageLinks && results.volumeInfo.imageLinks.thumbnail || "https://www.asme.org/getmedia/c2c8ea5a-b690-4ba7-92bb-34bd1432862b/book_guide_hero_books.aspx"} />
                     <h1
                       className="legend titlehome"
                       style={{ fontSize: "30px" }}
@@ -171,7 +171,8 @@ class Home extends Component {
                                         style={{ borderRadius: "2px" }}
                                         src={
                                           results.volumeInfo.imageLinks
-                                            .thumbnail
+                                             && results.volumeInfo.imageLinks
+                                            .thumbnail || "https://www.asme.org/getmedia/c2c8ea5a-b690-4ba7-92bb-34bd1432862b/book_guide_hero_books.aspx"
                                         }
                                         alt="img"
                                       />
@@ -206,14 +207,18 @@ class Home extends Component {
                 </div>
               </div>
             </div>
+
+           { this.state.keywords &&
             <Link className="see_all" style={{ fontSize: "22px" }} to={"/Allbooks/"+this.state.keywords}>
                         See all
-            </Link>
+            </Link>}
+
           </div>
+
+
         </section>
 
 
-        {/* <div style={{display: "none"}}> <Books keywords={this.state.keywords}/> </div> */}
  
       </div>
     );

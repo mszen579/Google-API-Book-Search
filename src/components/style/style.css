@@ -41,6 +41,7 @@ body,html{
 body {
 font-family: 'Merriweather', serif;
   overflow-x: hidden !important;
+  background-color:#F6F6F6;
 }
 
 ul{

@@ -13,8 +13,7 @@ import "./components/style/css/jquery.tosrus.all.css";
 import "./components/style/css/themes/default-theme.css";
 import "./components/style/style.css";
 import Books from "./Books";
-import SingleBook from "./SingleBook";
-import List from "./List";
+
 
 class App extends Component {
   constructor(props) {

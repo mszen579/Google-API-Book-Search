@@ -3,6 +3,7 @@ import React from 'react'
 import { Component } from "react";
 import axios from "axios";
 import Moment from "react-moment";
+import { Link } from "react-router-dom";
 export default class Books extends Component {
     constructor(props) {
         super(props);
@@ -57,6 +58,9 @@ export default class Books extends Component {
 
     
             <div>
+            <Link className="btn btn-primary" style={{ fontSize: "22px" }} to={"/"}>
+                       Search again
+            </Link>
               {this.state.result &&
                 this.state.result.map(function(item) {
                   return (
@@ -75,7 +79,7 @@ export default class Books extends Component {
                       <div className="single_blog_archive wow fadeInUp">
                         <div className="blogimg_container">
                           <a href={item.volumeInfo.infoLink} className="blog_img">
-                                    <img alt="img" src={ item.volumeInfo.imageLinks.thumbnail && item.volumeInfo.imageLinks.thumbnail || "https://www.asme.org/getmedia/c2c8ea5a-b690-4ba7-92bb-34bd1432862b/book_guide_hero_books.aspx"}  />
+                                    <img alt="img" src={ item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.thumbnail || "https://www.asme.org/getmedia/c2c8ea5a-b690-4ba7-92bb-34bd1432862b/book_guide_hero_books.aspx"}  />
                           </a>
                         </div>
                         <h2 className="blog_title">
